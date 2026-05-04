@@ -448,3 +448,32 @@ fun reto21() {
 
     println(pisosPrimos)
 }
+
+fun reto22() {
+    val pila = mutableListOf<String>()
+
+    fun push(plato: String) {
+        pila.add(plato)
+        println("Añadido: $plato")
+    }
+
+    fun pop() {
+        if (pila.isNotEmpty()) {
+            val plato = pila[pila.size - 1]
+            pila.removeAt(pila.size - 1)
+            println("Lavado: $plato")
+        } else {
+            println("No hay platos")
+        }
+    }
+
+    push("plato1")
+    push("plato2")
+    push("plato3")
+    pop()
+    pop()
+    push("plato4")
+    pop()
+
+    println("Pila actual: $pila")
+}
