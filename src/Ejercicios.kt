@@ -294,3 +294,20 @@ fun reto15() {
 
     println(conIva)
 }
+
+fun reto16() {
+    val sensores = mutableListOf(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15)
+
+    val aEliminar = mutableListOf<Int>()
+    for (sensor in sensores) {
+        if (sensor % 3 == 0) {
+            aEliminar.add(sensor)
+        }
+    }
+
+    for (sensor in aEliminar) {
+        sensores.remove(sensor)
+    }
+
+    println(sensores)
+}
