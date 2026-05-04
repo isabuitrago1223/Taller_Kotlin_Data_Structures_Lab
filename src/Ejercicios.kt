@@ -63,3 +63,18 @@ fun reto3() {
 
     println(ordenados)
 }
+
+fun reto4() {
+    val carrito = listOf("manzana", "leche", "manzana", "pan", "leche", "manzana")
+
+    val conteo = mutableMapOf<String, Int>()
+    for (producto in carrito) {
+        if (conteo.containsKey(producto)) {
+            conteo[producto] = conteo[producto]!! + 1
+        } else {
+            conteo[producto] = 1
+        }
+    }
+
+    println(conteo)
+}
