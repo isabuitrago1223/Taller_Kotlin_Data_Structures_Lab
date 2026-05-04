@@ -78,3 +78,19 @@ fun reto4() {
 
     println(conteo)
 }
+
+fun reto5() {
+    val historial = arrayOf(
+        "google.com", "youtube.com", "instagram.com",
+        "twitter.com", "github.com"
+    )
+
+    val invertido = arrayOf("", "", "", "", "")
+    var j = historial.size - 1
+    for (i in historial.indices) {
+        invertido[i] = historial[j]
+        j--
+    }
+
+    println(invertido.toList())
+}
