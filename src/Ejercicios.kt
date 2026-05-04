@@ -170,3 +170,18 @@ fun reto9() {
         println("El código [${entrada.key}] pertenece a [${entrada.value}]")
     }
 }
+
+fun reto10() {
+    val empleados = mutableListOf(
+        "Ana", "Carlos", "Maria", "Luis", "Sofia", "Pedro", "Laura"
+    )
+
+    val k = 2
+    repeat(k) {
+        val primero = empleados[0]
+        empleados.removeAt(0)
+        empleados.add(primero)
+    }
+
+    println(empleados)
+}
