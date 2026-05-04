@@ -614,3 +614,24 @@ fun reto28() {
     println("Costo por 5 horas: $${calcularCosto(5)}")
     println("Costo por 8 horas: $${calcularCosto(8)}")
 }
+
+fun reto29() {
+    val maletas = listOf(10, 25, 15, 30, 20, 5, 35)
+    val target = 40.0
+
+    var pareja = Pair(-1, -1)
+
+    for (i in maletas.indices) {
+        for (j in i + 1 until maletas.size) {
+            if (maletas[i] + maletas[j] == target.toInt()) {
+                pareja = Pair(maletas[i], maletas[j])
+            }
+        }
+    }
+
+    if (pareja.first != -1) {
+        println("Pareja encontrada: ${pareja.first}kg y ${pareja.second}kg ✅")
+    } else {
+        println("No se encontró ninguna pareja ")
+    }
+}
