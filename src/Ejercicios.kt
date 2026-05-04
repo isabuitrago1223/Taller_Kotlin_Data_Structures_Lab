@@ -515,8 +515,36 @@ fun reto24() {
     if (contador != 0) balanceado = false
 
     if (balanceado) {
-        println("Los contenedores están balanceados ✅")
+        println("Los contenedores están balanceados ")
     } else {
-        println("Los contenedores NO están balanceados ❌")
+        println("Los contenedores NO están balanceados ")
     }
+}
+
+fun reto25() {
+    val tiempos = listOf(240.0, 185.0, 312.0, 198.0, 275.0, 223.0, 189.0, 301.0)
+
+    var maximo = tiempos[0]
+    var minimo = tiempos[0]
+
+    for (tiempo in tiempos) {
+        if (tiempo > maximo) maximo = tiempo
+        if (tiempo < minimo) minimo = tiempo
+    }
+
+    val sinOutliers = mutableListOf<Double>()
+    for (tiempo in tiempos) {
+        if (tiempo != maximo && tiempo != minimo) {
+            sinOutliers.add(tiempo)
+        }
+    }
+
+    var suma = 0.0
+    for (tiempo in sinOutliers) {
+        suma += tiempo
+    }
+    val promedio = suma / sinOutliers.size
+
+    println("Tiempos sin outliers: $sinOutliers")
+    println("Promedio real: $promedio segundos")
 }
