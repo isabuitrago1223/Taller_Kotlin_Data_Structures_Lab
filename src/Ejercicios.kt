@@ -248,3 +248,29 @@ fun reto13() {
         println("Camión ${index + 1}: ${camiones[index]}")
     }
 }
+
+fun reto14() {
+    val tickets = listOf(
+        "ERR001", "ERR002", "ERR001", "ERR003",
+        "ERR002", "ERR004", "ERR003", "ERR001",
+        "ERR005", "ERR002", "ERR004", "ERR006"
+    )
+
+    val conteo = mutableMapOf<String, Int>()
+    for (ticket in tickets) {
+        if (conteo.containsKey(ticket)) {
+            conteo[ticket] = conteo[ticket]!! + 1
+        } else {
+            conteo[ticket] = 1
+        }
+    }
+
+    var ticketUnico = ""
+    for (entrada in conteo) {
+        if (entrada.value == 1) {
+            ticketUnico = entrada.key
+        }
+    }
+
+    println("Ticket único: $ticketUnico")
+}
