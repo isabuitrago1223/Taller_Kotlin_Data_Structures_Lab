@@ -94,3 +94,22 @@ fun reto5() {
 
     println(invertido.toList())
 }
+
+fun reto6() {
+    val persona1 = setOf("fútbol", "música", "viajes", "cocina", "lectura")
+    val persona2 = setOf("música", "viajes", "gaming", "lectura", "senderismo")
+
+    val enComun = mutableSetOf<String>()
+    val exclusivos = mutableSetOf<String>()
+
+    for (interes in persona1) {
+        if (persona2.contains(interes)) {
+            enComun.add(interes)
+        } else {
+            exclusivos.add(interes)
+        }
+    }
+
+    println("En común: $enComun")
+    println("Exclusivos de persona1: $exclusivos")
+}
