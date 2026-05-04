@@ -113,3 +113,30 @@ fun reto6() {
     println("En común: $enComun")
     println("Exclusivos de persona1: $exclusivos")
 }
+
+fun reto7() {
+    val despensa = mutableMapOf(
+        "arroz" to 5,
+        "leche" to 2,
+        "huevos" to 12,
+        "pan" to 1,
+        "aceite" to 3
+    )
+
+    despensa["leche"] = despensa["leche"]!! - 1
+    despensa["pan"] = despensa["pan"]!! - 1
+
+    val agotados = mutableListOf<String>()
+    for (producto in despensa) {
+        if (producto.value <= 0) {
+            agotados.add(producto.key)
+        }
+    }
+
+    for (producto in agotados) {
+        despensa.remove(producto)
+        println(" $producto se agotó y fue eliminado")
+    }
+
+    println(despensa)
+}
