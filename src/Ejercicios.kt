@@ -274,3 +274,23 @@ fun reto14() {
 
     println("Ticket único: $ticketUnico")
 }
+
+fun reto15() {
+    val precios = mapOf(
+        "leche" to 3000.0,
+        "televisor" to 80000.0,
+        "pan" to 2000.0,
+        "celular" to 120000.0,
+        "arroz" to 4000.0,
+        "nevera" to 95000.0
+    )
+
+    val conIva = mutableMapOf<String, Double>()
+    for (producto in precios) {
+        if (producto.value > 50000) {
+            conIva[producto.key] = producto.value * 1.19
+        }
+    }
+
+    println(conIva)
+}
