@@ -27,3 +27,22 @@ fun reto1() {
     println("Máximo: $$maximo")
     println("Mínimo: $$minimo")
 }
+
+fun reto2() {
+    val empleados = listOf(
+        Pair("Ana", 25),
+        Pair("Carlos", 35),
+        Pair("Maria", 42),
+        Pair("Luis", 28),
+        Pair("Sofia", 31)
+    )
+
+    val senior = mutableListOf<String>()
+    for (empleado in empleados) {
+        if (empleado.second > 30) {
+            senior.add(empleado.first.uppercase())
+        }
+    }
+
+    println(senior)
+}
