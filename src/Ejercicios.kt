@@ -363,3 +363,35 @@ fun reto18() {
 
     println(compras)
 }
+
+fun reto19() {
+    val apps = mutableListOf(
+        Pair("Instagram", 4.5),
+        Pair("TikTok", 4.8),
+        Pair("Twitter", 3.9),
+        Pair("Spotify", 4.7),
+        Pair("YouTube", 4.6),
+        Pair("WhatsApp", 4.3),
+        Pair("Netflix", 4.4),
+        Pair("Uber", 3.8),
+        Pair("Gmail", 4.1),
+        Pair("Maps", 4.2),
+        Pair("Duolingo", 4.9),
+        Pair("Discord", 4.0)
+    )
+
+    for (i in apps.indices) {
+        for (j in 0 until apps.size - 1 - i) {
+            if (apps[j].second < apps[j + 1].second) {
+                val temp = apps[j]
+                apps[j] = apps[j + 1]
+                apps[j + 1] = temp
+            }
+        }
+    }
+
+    val top10 = apps.subList(0, 10)
+    for (index in top10.indices) {
+        println("${index + 1}. ${top10[index].first} - ${top10[index].second}⭐")
+    }
+}
