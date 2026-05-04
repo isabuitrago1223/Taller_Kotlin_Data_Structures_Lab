@@ -635,3 +635,29 @@ fun reto29() {
         println("No se encontró ninguna pareja ")
     }
 }
+
+fun reto30() {
+    val plano = arrayOf(
+        arrayOf(1, 2, 3),
+        arrayOf(4, 5, 6),
+        arrayOf(7, 8, 9)
+    )
+
+    val transpuesto = arrayOf(
+        arrayOf(0, 0, 0),
+        arrayOf(0, 0, 0),
+        arrayOf(0, 0, 0)
+    )
+
+    for (i in plano.indices) {
+        for (j in plano[i].indices) {
+            transpuesto[j][i] = plano[i][j]
+        }
+    }
+
+    println("Plano original:")
+    for (fila in plano) println(fila.toList())
+
+    println("Plano transpuesto:")
+    for (fila in transpuesto) println(fila.toList())
+}
