@@ -185,3 +185,27 @@ fun reto10() {
 
     println(empleados)
 }
+
+fun reto11() {
+    val objetos = listOf(
+        Pair("camisa", 1),
+        Pair("laptop", 3),
+        Pair("zapatos", 2),
+        Pair("libro", 1),
+        Pair("chaqueta", 2),
+        Pair("cargador", 1),
+        Pair("pantalon", 2)
+    )
+
+    val maleta = mutableMapOf<Int, MutableList<String>>()
+
+    for (objeto in objetos) {
+        val peso = objeto.second
+        if (!maleta.containsKey(peso)) {
+            maleta[peso] = mutableListOf()
+        }
+        maleta[peso]!!.add(objeto.first)
+    }
+
+    println(maleta)
+}
