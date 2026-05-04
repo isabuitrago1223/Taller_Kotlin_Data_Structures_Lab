@@ -594,3 +594,23 @@ fun reto27() {
     println("Promedio del equipo: $promedio")
     println("Vendedores con bono: $conBono")
 }
+
+fun reto28() {
+    val tarifas = mutableMapOf<Int, Double>()
+
+    for (hora in 1..10) {
+        tarifas[hora] = hora * 2500.0
+    }
+
+    fun calcularCosto(horas: Int): Double {
+        var total = 0.0
+        for (hora in 1..horas) {
+            total += tarifas[hora] ?: 0.0
+        }
+        return total
+    }
+
+    println("Costo por 3 horas: $${calcularCosto(3)}")
+    println("Costo por 5 horas: $${calcularCosto(5)}")
+    println("Costo por 8 horas: $${calcularCosto(8)}")
+}
