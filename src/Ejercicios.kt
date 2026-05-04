@@ -140,3 +140,19 @@ fun reto7() {
 
     println(despensa)
 }
+
+fun reto8() {
+    val notas = listOf(
+        Pair(4.5, 0.3),
+        Pair(3.8, 0.2),
+        Pair(4.0, 0.25),
+        Pair(3.5, 0.25)
+    )
+
+    var notaFinal = 0.0
+    for (nota in notas) {
+        notaFinal = notaFinal + (nota.first * nota.second)
+    }
+
+    println("Nota final: $notaFinal")
+}
