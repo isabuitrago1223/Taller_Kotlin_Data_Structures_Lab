@@ -311,3 +311,23 @@ fun reto16() {
 
     println(sensores)
 }
+
+fun reto17() {
+    val almacen = arrayOf(
+        arrayOf(3, 7, 2, 1),
+        arrayOf(5, 4, 8, 6),
+        arrayOf(9, 2, 5, 3),
+        arrayOf(1, 6, 4, 7)
+    )
+
+    var diagonal principal = 0
+    var diagonalSecundaria = 0
+
+    for (i in almacen.indices) {
+        diagonalPrincipal += almacen[i][i]
+        diagonalSecundaria += almacen[i][almacen.size - 1 - i]
+    }
+
+    println("Diagonal principal: $diagonalPrincipal")
+    println("Diagonal secundaria: $diagonalSecundaria")
+}
