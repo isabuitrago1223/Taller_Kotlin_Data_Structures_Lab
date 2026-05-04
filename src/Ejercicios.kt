@@ -567,3 +567,30 @@ fun reto26() {
         println("${entrada.first} aparece ${entrada.second} veces")
     }
 }
+
+fun reto27() {
+    val ventas = mapOf(
+        "Ana" to 850000.0,
+        "Carlos" to 1200000.0,
+        "Maria" to 950000.0,
+        "Luis" to 700000.0,
+        "Sofia" to 1100000.0,
+        "Pedro" to 800000.0
+    )
+
+    var suma = 0.0
+    for (venta in ventas) {
+        suma += venta.value
+    }
+    val promedio = suma / ventas.size
+
+    val conBono = mutableListOf<String>()
+    for (venta in ventas) {
+        if (venta.value > promedio) {
+            conBono.add(venta.key)
+        }
+    }
+
+    println("Promedio del equipo: $promedio")
+    println("Vendedores con bono: $conBono")
+}
