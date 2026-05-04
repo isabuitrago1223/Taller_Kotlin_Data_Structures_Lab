@@ -331,3 +331,35 @@ fun reto17() {
     println("Diagonal principal: $diagonalPrincipal")
     println("Diagonal secundaria: $diagonalSecundaria")
 }
+
+fun reto18() {
+    val chef1 = mapOf(
+        "harina" to 2.0,
+        "azucar" to 1.5,
+        "mantequilla" to 0.5,
+        "leche" to 1.0
+    )
+
+    val chef2 = mapOf(
+        "harina" to 1.0,
+        "azucar" to 0.5,
+        "huevos" to 3.0,
+        "leche" to 0.5
+    )
+
+    val compras = mutableMapOf<String, Double>()
+
+    for (ingrediente in chef1) {
+        compras[ingrediente.key] = ingrediente.value
+    }
+
+    for (ingrediente in chef2) {
+        if (compras.containsKey(ingrediente.key)) {
+            compras[ingrediente.key] = compras[ingrediente.key]!! + ingrediente.value
+        } else {
+            compras[ingrediente.key] = ingrediente.value
+        }
+    }
+
+    println(compras)
+}
