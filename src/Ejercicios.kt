@@ -226,3 +226,25 @@ fun reto12() {
         println("La ruta NO es espejo ")
     }
 }
+
+fun reto13() {
+    val paquetes = mutableListOf<Int>()
+    for (i in 1..50) {
+        paquetes.add(i)
+    }
+
+    val camiones = mutableListOf<List<Int>>()
+    var i = 0
+    while (i < paquetes.size) {
+        val lote = mutableListOf<Int>()
+        for (j in i until minOf(i + 10, paquetes.size)) {
+            lote.add(paquetes[j])
+        }
+        camiones.add(lote)
+        i += 10
+    }
+
+    for (index in camiones.indices) {
+        println("Camión ${index + 1}: ${camiones[index]}")
+    }
+}
