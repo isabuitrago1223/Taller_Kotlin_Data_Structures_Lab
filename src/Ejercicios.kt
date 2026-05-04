@@ -395,3 +395,31 @@ fun reto19() {
         println("${index + 1}. ${top10[index].first} - ${top10[index].second}⭐")
     }
 }
+
+fun reto20() {
+    val agenda1 = listOf("Ana", "Carlos", "Luis", "Maria", "Sofia")
+    val agenda2 = listOf("Diego", "Juan", "Maria", "Pedro", "Sofia")
+
+    val combinada = mutableListOf<String>()
+
+    for (nombre in agenda1) combinada.add(nombre)
+    for (nombre in agenda2) {
+        if (!combinada.contains(nombre)) {
+            combinada.add(nombre)
+        }
+    }
+
+    var i = 0
+    while (i < combinada.size - 1) {
+        if (combinada[i] > combinada[i + 1]) {
+            val temp = combinada[i]
+            combinada[i] = combinada[i + 1]
+            combinada[i + 1] = temp
+            i = 0
+        } else {
+            i++
+        }
+    }
+
+    println(combinada)
+}
