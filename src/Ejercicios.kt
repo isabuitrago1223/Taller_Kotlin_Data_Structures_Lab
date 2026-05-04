@@ -156,3 +156,17 @@ fun reto8() {
 
     println("Nota final: $notaFinal")
 }
+
+fun reto9() {
+    val paises = mapOf(
+        "CO" to "Colombia",
+        "US" to "Estados Unidos",
+        "MX" to "México",
+        "AR" to "Argentina",
+        "ES" to "España"
+    )
+
+    for (entrada in paises) {
+        println("El código [${entrada.key}] pertenece a [${entrada.value}]")
+    }
+}
