@@ -548,3 +548,22 @@ fun reto25() {
     println("Tiempos sin outliers: $sinOutliers")
     println("Promedio real: $promedio segundos")
 }
+
+fun reto26() {
+    val logs = listOf("UP", "UP", "DOWN", "DOWN", "DOWN", "UP", "UP", "UP", "DOWN")
+
+    val comprimido = mutableListOf<Pair<String, Int>>()
+
+    for (log in logs) {
+        if (comprimido.isNotEmpty() && comprimido[comprimido.size - 1].first == log) {
+            val ultimo = comprimido[comprimido.size - 1]
+            comprimido[comprimido.size - 1] = Pair(ultimo.first, ultimo.second + 1)
+        } else {
+            comprimido.add(Pair(log, 1))
+        }
+    }
+
+    for (entrada in comprimido) {
+        println("${entrada.first} aparece ${entrada.second} veces")
+    }
+}
