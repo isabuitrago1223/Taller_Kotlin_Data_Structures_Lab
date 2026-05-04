@@ -423,3 +423,28 @@ fun reto20() {
 
     println(combinada)
 }
+
+fun reto21() {
+    val marcas = Array(101) { false }
+
+    for (piso in 2..100) {
+        var esPrimo = true
+        for (i in 2 until piso) {
+            if (piso % i == 0) {
+                esPrimo = false
+            }
+        }
+        if (esPrimo) {
+            marcas[piso] = true
+        }
+    }
+
+    val pisosPrimos = mutableListOf<Int>()
+    for (piso in 2..100) {
+        if (marcas[piso]) {
+            pisosPrimos.add(piso)
+        }
+    }
+
+    println(pisosPrimos)
+}
