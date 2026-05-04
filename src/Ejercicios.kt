@@ -209,3 +209,20 @@ fun reto11() {
 
     println(maleta)
 }
+
+fun reto12() {
+    val ruta = listOf(1, 2, 3, 4, 3, 2, 1)
+
+    var esPalindromo = true
+    for (i in ruta.indices) {
+        if (ruta[i] != ruta[ruta.size - 1 - i]) {
+            esPalindromo = false
+        }
+    }
+
+    if (esPalindromo) {
+        println("La ruta ES espejo ")
+    } else {
+        println("La ruta NO es espejo ")
+    }
+}
