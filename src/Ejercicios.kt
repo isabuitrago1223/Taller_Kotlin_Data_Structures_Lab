@@ -494,3 +494,29 @@ fun reto23() {
 
     println(diferencias)
 }
+
+fun reto24() {
+    val manifiesto = "((()))()(())"
+
+    var contador = 0
+    var balanceado = true
+
+    for (char in manifiesto) {
+        if (char == '(') {
+            contador++
+        } else if (char == ')') {
+            contador--
+        }
+        if (contador < 0) {
+            balanceado = false
+        }
+    }
+
+    if (contador != 0) balanceado = false
+
+    if (balanceado) {
+        println("Los contenedores están balanceados ✅")
+    } else {
+        println("Los contenedores NO están balanceados ❌")
+    }
+}
