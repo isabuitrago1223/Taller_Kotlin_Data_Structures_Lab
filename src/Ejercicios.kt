@@ -477,3 +477,20 @@ fun reto22() {
 
     println("Pila actual: $pila")
 }
+
+fun reto23() {
+    val calorias = listOf(2000.0, 1800.0, 2200.0, 1500.0, 2100.0, 1900.0, 2300.0)
+
+    val diferencias = mutableListOf<Double>()
+
+    for (i in 1 until calorias.size) {
+        var suma = 0.0
+        for (j in 0 until i) {
+            suma += calorias[j]
+        }
+        val promedio = suma / i
+        diferencias.add(calorias[i] - promedio)
+    }
+
+    println(diferencias)
+}
